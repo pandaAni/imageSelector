@@ -61,7 +61,7 @@ $(document).ready(function () {
             <span>
                 <select name="value" class="image-select">
                     <option value="0" class="primary" >primary image</option>
-                    <option value="1" class="secondary"selectedgit>secondary image</option>
+                    <option value="1" class="secondary"selected>secondary image</option>
                 </select>
                 <button id="remove">remove</button>
             </span>
