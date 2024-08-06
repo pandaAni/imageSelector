@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    #box {
+        padding: 1vw 2vw;
+    }
+
+    #elems {
+        margin: 10px;
+        padding: 0 20px;
+        border-radius: 10px;
+        height: 130px;
+        width: 700px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #9bdada;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #elems #delete {
+        position: absolute;
+        left: 15%;
+        bottom: 15%;
+    }
+
+    #elems img {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+
+    #elems select {
+        border: 0.5px solid black;
+        background-color: #242731;
+        color: white;
+        padding: 7px 15px;
+        font-weight: 400;
+        text-transform: capitalize;
+        font-family: sans-serif;
+        font-size: 15px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #elems button {
+        border: none;
+        padding: 7px 15px;
+        background-color: #242731;
+        color: white;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-family: cursive;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    #elems button:focus {
+        outline: none;
+    }
+
+    input[type="file"] {
+        position: relative;
+    }
+
+    input[type="file"]::file-selector-button {
+        width: 136px;
+        color: transparent;
+    }
+
+    /* Faked label styles and icon */
+    input[type="file"]::before {
+        position: absolute;
+        pointer-events: none;
+        top: 10px;
+        left: 16px;
+        height: 20px;
+        width: 20px;
+        content: "";
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+    }
+
+    input[type="file"]::after {
+        position: absolute;
+        pointer-events: none;
+        top: 11px;
+        left: 40px;
+        color: #0964b0;
+        content: "Upload File";
+    }
+
+    /* ------- From Step 1 ------- */
+
+    /* file upload button */
+    input[type="file"]::file-selector-button {
+        border-radius: 4px;
+        padding: 0 16px;
+        height: 40px;
+        cursor: pointer;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+        margin-right: 16px;
+        transition: background-color 200ms;
+    }
+
+    /* file upload button hover state */
+    input[type="file"]::file-selector-button:hover {
+        background-color: #f3f4f6;
+    }
+
+    /* file upload button active state */
+    input[type="file"]::file-selector-button:active {
+        background-color: #e5e7eb;
+    }
+
+    #add {
+        margin-top: 60px;
+        border: none;
+        padding: 7px 15px;
+        background-color: #242731;
+        color: white;
+        font-weight: 500;
+        text-transform: capitalize;
+        font-family: cursive;
+        font-size: 15px;
+        border-radius: 10px;
+    }
+
+    @media screen and (max-width: 800px) {
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        #elems {
+            margin: 10px;
+            padding: 0 20px;
+            border-radius: 10px;
+            height: 130px;
+            width: 670px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #9bdada;
+            overflow: hidden;
+            position: relative;
+        }
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div class="elem"  id="elems">
+            <input type="file" class="file" accept="image/*">
+            <img class="avatar" src="" alt="Profile Picture" style="display: none;" />
+            <span>
+                <select name="value" class="image-select">
+                    <option value="0" class="primary" selected>primary image</option>
+                    <option value="1" class="secondary">secondary image</option>
+                </select>
+                <button id="remove">remove</button>
+            </span>
+        </div>
+    </div>
+    <div>
+        <button id="add">add another</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
