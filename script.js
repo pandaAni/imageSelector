@@ -60,8 +60,8 @@ $(document).ready(function () {
             <img class="avatar" src="" alt="Profile Picture" style="display: none;" />
             <span>
                 <select name="value" class="image-select">
-                    <option value="0" class="primary" selected>primary image</option>
-                    <option value="1" class="secondary">secondary image</option>
+                    <option value="0" class="primary" >primary image</option>
+                    <option value="1" class="secondary"selectedgit>secondary image</option>
                 </select>
                 <button id="remove">remove</button>
             </span>
